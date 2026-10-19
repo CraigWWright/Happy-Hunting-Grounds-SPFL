@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>SPFL Happy Hunting Grounds</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/styles.css">
+    <script defer src="js/app.js"></script>
+</head>
+
+<body>
+    <header>
+        <h1>SPFL Happy Hunting Grounds</h1>
+    </header>
+
+    <main>
+        <div id="rounds-container">
+
+        <!-- Round 1 -->
+        <div id="round1" class="round">
+            <div id="levelSelectSec1" class="levelSelect">
+                <form id="levelSelection1">
+                    <h2 class="round-title">Round 1</h2>
+                        <label for="levels1">Select a level</label>
+                        <br>
+                        <select id="levels1" name="levels">
+                            <option value="1">Level 1 — Very Easy</option>
+                            <option value="2">Level 2 — Easy</option>
+                            <option value="3">Level 3 — Easy</option>
+                            <option value="4">Level 4 — Medium</option>
+                            <option value="5">Level 5 — Medium</option>
+                            <option value="6">Level 6 — Medium</option>
+                            <option value="7">Level 7 — Hard</option>
+                            <option value="8">Level 8 — Hard</option>
+                            <option value="9">Level 9 — Very Hard</option>
+                            <option value="10">Level 10 — Expert</option>
+                        </select>
+                        <br>
+                         <input type="submit" value="Play" class="button">
+                </form>
+            </div>
+            <div id="guessSec1" class="guess hidden">
+                <form id="guessSelection1">
+                        <h2 class="round-title">Round 1</h2>
+                        <div id="score1" class="score-pill"></div>
+                        <p id="level1" class="challenge-text"></p>
+                        <label for="player1">Player (Surname only)</label><br>
+                        <div class="autocomplete-wrapper">
+                            <input type="text" id="player1" autocomplete="off" oninput="playerEntry(event)" onkeydown="if (event.key === 'Enter') event.preventDefault()">
+                            <ul id="suggestions1" class="suggestions"></ul>
+                        </div>
+                        <label for="season1">Season</label><br>
+                        <select id="season1" name="season">
+                            <option value="2025/26">2025/26</option>
+                            <option value="2024/25">2024/25</option>
+                            <option value="2023/24">2023/24</option>
+                            <option value="2022/23">2022/23</option>
+                            <option value="2021/22">2021/22</option>
+                            <option value="2020/21">2020/21</option>
+                            <option value="2019/20">2019/20</option>
+                            <option value="2018/19">2018/19</option>
+                            <option value="2017/18">2017/18</option>
+                            <option value="2016/17">2016/17</option>
+                            <option value="2015/16">2015/16</option>
+                            <option value="2014/15">2014/15</option>
+                            <option value="2013/14">2013/14</option>
+                            <option value="2012/13">2012/13</option>
+                            <option value="2011/12">2011/12</option>
+                            <option value="2010/11">2010/11</option>
+                            <option value="2009/10">2009/10</option>
+                            <option value="2008/09">2008/09</option>
+                            <option value="2007/08">2007/08</option>
+                            <option value="2006/07">2006/07</option>
+                            <option value="2005/06">2005/06</option>
+                            <option value="2004/05">2004/05</option>
+                        </select>
+                        <br>
+                        <input type="submit" value="Select Player and Season" class="button" id="answerSubmit1">
+                    <p id="result1" class="result-text"></p>
+                </form>
+            </div>
+        </div>
+
+        <!-- Round 2 -->
+        <div id="round2" class="round">
+            <div id="levelSelectSec2" class="levelSelect">
+                <form id="levelSelection2">
+                    <h2 class="round-title">Round 2</h2>
+                        <label for="levels2">Select a level</label>
+                        <br>
+                        <select id="levels2" name="levels" disabled>
+                            <option value="1">Level 1 — Very Easy</option>
+                            <option value="2">Level 2 — Easy</option>
+                            <option value="3">Level 3 — Easy</option>
+                            <option value="4">Level 4 — Medium</option>
+                            <option value="5">Level 5 — Medium</option>
+                            <option value="6">Level 6 — Medium</option>
+                            <option value="7">Level 7 — Hard</option>
+                            <option value="8">Level 8 — Hard</option>
+                            <option value="9">Level 9 — Very Hard</option>
+                            <option value="10">Level 10 — Expert</option>
+                        </select>
+                        <br>
+                        <input type="submit" id="playBtn2" value="Play" class="button" disabled>
+                </form>
+            </div>
+            <div id="guessSec2" class="guess hidden">
+                <form id="guessSelection2">
+                        <h2 class="round-title">Round 2</h2>
+                        <div id="score2" class="score-pill"></div>
+                        <p id="level2" class="challenge-text"></p>
+                        <label for="player2">Player (Surname only)</label><br>
+                        <div class="autocomplete-wrapper">
+                            <input type="text" id="player2" autocomplete="off" oninput="playerEntry(event)" onkeydown="if (event.key === 'Enter') event.preventDefault()">
+                            <ul id="suggestions2" class="suggestions"></ul>
+                        </div>
+                        <label for="season2">Season</label><br>
+                        <select id="season2" name="season">
+                            <option value="2025/26">2025/26</option>
+                            <option value="2024/25">2024/25</option>
+                            <option value="2023/24">2023/24</option>
+                            <option value="2022/23">2022/23</option>
+                            <option value="2021/22">2021/22</option>
+                            <option value="2020/21">2020/21</option>
+                            <option value="2019/20">2019/20</option>
+                            <option value="2018/19">2018/19</option>
+                            <option value="2017/18">2017/18</option>
+                            <option value="2016/17">2016/17</option>
+                            <option value="2015/16">2015/16</option>
+                            <option value="2014/15">2014/15</option>
+                            <option value="2013/14">2013/14</option>
+                            <option value="2012/13">2012/13</option>
+                            <option value="2011/12">2011/12</option>
+                            <option value="2010/11">2010/11</option>
+                            <option value="2009/10">2009/10</option>
+                            <option value="2008/09">2008/09</option>
+                            <option value="2007/08">2007/08</option>
+                            <option value="2006/07">2006/07</option>
+                            <option value="2005/06">2005/06</option>
+                            <option value="2004/05">2004/05</option>
+                        </select>
+                        <br>
+                        <input type="submit" value="Select Player and Season" class="button" id="answerSubmit2">
+                    <p id="result2" class="result-text"></p>
+                </form>
+            </div>
+        </div>
+
+        <!-- Round 3 -->
+        <div id="round3" class="round">
+            <div id="levelSelectSec3" class="levelSelect">
+                <form id="levelSelection3">
+                    <h2 class="round-title">Round 3</h2>
+                        <label for="levels3">Select a level</label>
+                        <br>
+                        <select id="levels3" name="levels" disabled>
+                            <option value="1">Level 1 — Very Easy</option>
+                            <option value="2">Level 2 — Easy</option>
+                            <option value="3">Level 3 — Easy</option>
+                            <option value="4">Level 4 — Medium</option>
+                            <option value="5">Level 5 — Medium</option>
+                            <option value="6">Level 6 — Medium</option>
+                            <option value="7">Level 7 — Hard</option>
+                            <option value="8">Level 8 — Hard</option>
+                            <option value="9">Level 9 — Very Hard</option>
+                            <option value="10">Level 10 — Expert</option>
+                        </select>
+                        <br>
+                        <input type="submit" id="playBtn3" value="Play" class="button" disabled>
+                </form>
+            </div>
+            <div id="guessSec3" class="guess hidden">
+                <form id="guessSelection3">
+                        <h2 class="round-title">Round 3</h2>
+                        <div id="score3" class="score-pill"></div>
+                        <p id="level3" class="challenge-text"></p>
+                        <label for="player3">Player (Surname only)</label><br>
+                        <div class="autocomplete-wrapper">
+                            <input type="text" id="player3" autocomplete="off" oninput="playerEntry(event)" onkeydown="if (event.key === 'Enter') event.preventDefault()">
+                            <ul id="suggestions3" class="suggestions"></ul>
+                        </div>
+                        <label for="season3">Season</label><br>
+                        <select id="season3" name="season">
+                             <option value="2025/26">2025/26</option>
+                            <option value="2024/25">2024/25</option>
+                            <option value="2023/24">2023/24</option>
+                            <option value="2022/23">2022/23</option>
+                            <option value="2021/22">2021/22</option>
+                            <option value="2020/21">2020/21</option>
+                            <option value="2019/20">2019/20</option>
+                            <option value="2018/19">2018/19</option>
+                            <option value="2017/18">2017/18</option>
+                            <option value="2016/17">2016/17</option>
+                            <option value="2015/16">2015/16</option>
+                            <option value="2014/15">2014/15</option>
+                            <option value="2013/14">2013/14</option>
+                            <option value="2012/13">2012/13</option>
+                            <option value="2011/12">2011/12</option>
+                            <option value="2010/11">2010/11</option>
+                            <option value="2009/10">2009/10</option>
+                            <option value="2008/09">2008/09</option>
+                            <option value="2007/08">2007/08</option>
+                            <option value="2006/07">2006/07</option>
+                            <option value="2005/06">2005/06</option>
+                            <option value="2004/05">2004/05</option>
+                        </select>
+                        <br>
+                        <input type="submit" value="Select Player and Season" class="button" id="answerSubmit3">
+                    <p id="result3" class="result-text"></p>
+                </form>
+            </div>
+        </div>
+
+        </div><!-- end rounds-container -->
+
+        <!-- Final score -->
+        <div id="finalScore" >
+            <p id="totalScoreDisplay">Total score: 0</p>
+        </div>
+
+        <div style="text-align: center;">
+            <input type="button" value="Start New Game" class="button" id="newGameBtn" onclick="window.location.reload();">
+        </div>
+
+        <br>
+
+        <hr>
+        Credit for the game idea goes to the Football Cliches podcast.
+        <hr>
+
+        <div>
+            <h3>The Rules</h3>
+            <ul>
+                <li>The aim of the game is to guess goalscorers for teams at away stadiums in the Scottish top division since 2004.</li>
+                <li>There are three rounds, where you will be given a team and a ground combination to guess.</li>
+                <li>You will first choose a difficulty level. 1 being the easiest, 10 being the hardest.</li>
+                <li>Answer with a player that you think has scored there and the season they scored.</li>
+                <li>If correct you will score points equal to the level you chose.</li>
+            </ul>
+        </div>
+
+        <div>
+            <h3>Notes</h3>
+            <ul>
+                <li>Not affiliated with the Football Cliches podcast. Created by a fan.</li>
+                <li>Data was scraped from Flashscore. If you notice any issues please get in touch.</li>
+            </ul>
+        </div>
+
+    </main>
+</body>
+
+</html>
