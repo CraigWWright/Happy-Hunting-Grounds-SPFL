@@ -22,7 +22,7 @@ function levelSelect(event) {
 }
 
 async function fetchLevel(level) {
-    const response = await fetch('http://localhost:8080/level?userSelectedLevel=' + level);
+    const response = await fetch('https://spfl-happy-hunting-grounds.hostless.app/level?userSelectedLevel=' + level);
     const levelData = await response.json();
 
     localStorage.setItem("levelData" + currentRound, JSON.stringify(levelData));
@@ -42,7 +42,7 @@ function guessEntry(event) {
 async function fetchGuess(playerSelection, seasonSelection) {
     const text = localStorage.getItem("levelData" + currentRound);
     const obj = JSON.parse(text);
-    const response = await fetch('http://localhost:8080/guess?team=' + obj.team + '&ground=' + obj.ground + '&season=' + seasonSelection + '&playerName=' + playerSelection + '&level=' + obj.level);
+    const response = await fetch('https://spfl-happy-hunting-grounds.hostless.app//guess?team=' + obj.team + '&ground=' + obj.ground + '&season=' + seasonSelection + '&playerName=' + playerSelection + '&level=' + obj.level);
     const data = await response.json();
 
     if (!data.correct) {
@@ -92,7 +92,7 @@ function playerEntry(event) {
 async function fetchPlayer(query, roundNum) {
     const suggestionsList = document.getElementById('suggestions' + roundNum);
 
-    const response = await fetch('http://localhost:8080/players?player=' + encodeURIComponent(query));
+    const response = await fetch('https://spfl-happy-hunting-grounds.hostless.app//players?player=' + encodeURIComponent(query));
     const names = await response.json();
 
     suggestionsList.innerHTML = '';
