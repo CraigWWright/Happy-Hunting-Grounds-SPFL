@@ -1,6 +1,7 @@
 package com.example.backend.service;
 
 import com.example.backend.api.model.GuessResult;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.sql.*;
@@ -9,6 +10,12 @@ import java.util.ArrayList;
 @Service
 public class GuessService {
 
+    private final DatabaseService databaseService;
+
+    @Autowired
+    public GuessService(DatabaseService databaseService) {
+        this.databaseService = databaseService;
+    }
 
     public GuessResult getGuessResult(String team, String ground, String season, String playerName, int level) {
         String sql = """
@@ -59,7 +66,8 @@ public class GuessService {
                 """;
 
         GuessResult guessResult = null;
-        try (Connection conn = DriverManager.getConnection("jdbc:sqlite:spfl.sqlite");
+        try (Connection conn = DriverManager.getConnection(
+                databaseService.getConnectionUrl());
              PreparedStatement stmt = conn.prepareStatement(sql)) {
 
             stmt.setString(1, "%" + playerName + "%");   // CASE WHEN scorer
@@ -92,7 +100,8 @@ public class GuessService {
                 """;
 
         ArrayList<String> players = new ArrayList<>();
-        try (Connection conn = DriverManager.getConnection("jdbc:sqlite:spfl.sqlite");
+        try (Connection conn = DriverManager.getConnection(
+                databaseService.getConnectionUrl());
              PreparedStatement stmt = conn.prepareStatement(sql)) {
 
                  stmt.setString(1, "%" + player + "%");
