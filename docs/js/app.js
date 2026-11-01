@@ -45,12 +45,17 @@ function guessEntry(event) {
 async function fetchGuess(playerSelection, seasonSelection) {
     const text = localStorage.getItem("levelData" + currentRound);
     const obj = JSON.parse(text);
-    const response = await fetch('https://spfl-happy-hunting-grounds.hostless.app//guess?team=' + obj.team + '&ground=' + obj.ground + '&season=' + seasonSelection + '&playerName=' + playerSelection + '&level=' + obj.level);
+    //const response = await fetch('https://spfl-happy-hunting-grounds.hostless.app//guess?team=' + obj.team + '&ground=' + obj.ground + '&season=' + seasonSelection + '&playerName=' + playerSelection + '&level=' + obj.level);
+    const response = await fetch('http://localhost:8000/guess?team=' + obj.team + '&ground=' + obj.ground + '&season=' + seasonSelection + '&playerName=' + playerSelection + '&level=' + obj.level);
     const data = await response.json();
 
-    if (!data.correct) {
+    if (data.correct == 0) {
         document.getElementById("result" + currentRound).innerHTML =
             "Incorrect. " + playerSelection + " did not score for " + obj.team + " at " + obj.ground + " in " + seasonSelection + ".";
+    } else if (data.correct == 1) {
+        document.getElementById("result" + currentRound).innerHTML =
+            "Incorrect. " + playerSelection + " has scored at " + obj.ground + " but not in the " + seasonSelection +" season."
+            totalScore += data.points;
     } else {
         totalScore += data.points;
         document.getElementById("score" + currentRound).innerHTML = "Score: " + data.points;

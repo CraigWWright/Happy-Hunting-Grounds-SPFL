@@ -1,8 +1,10 @@
 package com.example.backend.api.model;
 
 public class GuessResult {
-    private Boolean correct;
-    private int points;
+
+    //2=correct 1=wrong season 0=wrong
+    private int correct;
+    private double points;
     private String date;
     private String homeTeam;
     private String awayTeam;
@@ -13,13 +15,13 @@ public class GuessResult {
 
 
     // incorrect guess — no match details needed
-    public GuessResult(boolean correct, int points) {
+    public GuessResult(int correct, double points) {
         this.correct = correct;
         this.points = points;
     }
 
     // correct guess — full match details
-    public GuessResult(boolean correct, int points, String date, String homeTeam,
+    public GuessResult(int correct, double points, String date, String homeTeam,
                        String awayTeam, String finalScore, String playerGoalsAt,
                        String homeScorers, String awayScorers) {
         this.correct = correct;
@@ -33,19 +35,19 @@ public class GuessResult {
         this.awayScorers = awayScorers;
     }
 
-    public Boolean getCorrect() {
+    public int getCorrect() {
         return correct;
     }
 
-    public void setCorrect(Boolean correct) {
+    public void setCorrect(int correct) {
         this.correct = correct;
     }
 
-    public int getPoints() {
+    public double getPoints() {
         return points;
     }
 
-    public void setPoints(int points) {
+    public void setPoints(double points) {
         this.points = points;
     }
 

@@ -29,7 +29,7 @@ public class LevelService {
                 availableLevels.add(level);
             }
         }
-       
+
         int random = new Random().nextInt(availableLevels.size());
         return availableLevels.get(random);
     }
