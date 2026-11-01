@@ -2,6 +2,7 @@
 
 let currentRound = 1;
 let totalScore = 0;
+let usedCombinations = [];
 
 // Register level selection listeners for all 3 rounds
 document.getElementById("levelSelection1").addEventListener("submit", levelSelect);
@@ -22,10 +23,12 @@ function levelSelect(event) {
 }
 
 async function fetchLevel(level) {
-    const response = await fetch('https://spfl-happy-hunting-grounds.hostless.app/level?userSelectedLevel=' + level);
+    const used = encodeURIComponent(usedCombinations.join(","));
+    const response = await fetch('https://spfl-happy-hunting-grounds.hostless.app/level?userSelectedLevel=' + level + '&used=' + used);
     const levelData = await response.json();
 
     localStorage.setItem("levelData" + currentRound, JSON.stringify(levelData));
+    usedCombinations.push(levelData.team + "|" + levelData.ground);
 
     document.getElementById("levelSelectSec" + currentRound).classList.add('hidden');
     document.getElementById("guessSec" + currentRound).classList.remove('hidden');

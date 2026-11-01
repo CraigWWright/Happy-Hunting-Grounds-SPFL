@@ -20,14 +20,16 @@ public class LevelService {
         levelList = loadLevels();
     }
 
-    public Level getLevel(Integer userSelectedLevel) {
+    public Level getLevel(Integer userSelectedLevel, List<String> usedCombinations) {
         List<Level> availableLevels = new ArrayList<>();
 
         for (Level level : levelList) {
-            if (level.getLevel() == userSelectedLevel) {
+            String combo = level.getTeam() + "|" + level.getGround();
+            if (level.getLevel() == userSelectedLevel && !usedCombinations.contains(combo)) {
                 availableLevels.add(level);
             }
         }
+        System.out.println("Size of available levels: " + availableLevels.size());
         int random = new Random().nextInt(availableLevels.size());
         return availableLevels.get(random);
     }

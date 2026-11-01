@@ -47,7 +47,7 @@
                         <p id="level1" class="challenge-text"></p>
                         <label for="player1">Player (Surname only)</label><br>
                         <div class="autocomplete-wrapper">
-                            <input type="text" id="player1" autocomplete="off" oninput="playerEntry(event)" onkeydown="if (event.key === 'Enter') event.preventDefault()">
+                            <input type="text" id="player1" autocomplete="off" oninput="playerEntry(event)" onkeydown="if (event.key === 'Enter') event.preventDefault()" required>
                             <ul id="suggestions1" class="suggestions"></ul>
                         </div>
                         <label for="season1">Season</label><br>
