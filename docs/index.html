@@ -14,6 +14,10 @@
         <h1>SPFL Happy Hunting Grounds</h1>
     </header>
 
+    <nav class="mode-nav">
+        <a href="ladder.html">Try out The Ladder</a>
+    </nav>
+
     <main>
         <div id="rounds-container">
 
@@ -45,7 +49,7 @@
                         <h2 class="round-title">Round 1</h2>
                         <div id="score1" class="score-pill"></div>
                         <p id="level1" class="challenge-text"></p>
-                        <label for="player1">Player (Surname only)</label><br>
+                        <label for="player1">Player</label><br>
                         <div class="autocomplete-wrapper">
                             <input type="text" id="player1" autocomplete="off" oninput="playerEntry(event)" onkeydown="if (event.key === 'Enter') event.preventDefault()" required>
                             <ul id="suggestions1" class="suggestions"></ul>
@@ -110,7 +114,7 @@
                         <h2 class="round-title">Round 2</h2>
                         <div id="score2" class="score-pill"></div>
                         <p id="level2" class="challenge-text"></p>
-                        <label for="player2">Player (Surname only)</label><br>
+                        <label for="player2">Player</label><br>
                         <div class="autocomplete-wrapper">
                             <input type="text" id="player2" autocomplete="off" oninput="playerEntry(event)" onkeydown="if (event.key === 'Enter') event.preventDefault()">
                             <ul id="suggestions2" class="suggestions"></ul>
@@ -175,7 +179,7 @@
                         <h2 class="round-title">Round 3</h2>
                         <div id="score3" class="score-pill"></div>
                         <p id="level3" class="challenge-text"></p>
-                        <label for="player3">Player (Surname only)</label><br>
+                        <label for="player3">Player</label><br>
                         <div class="autocomplete-wrapper">
                             <input type="text" id="player3" autocomplete="off" oninput="playerEntry(event)" onkeydown="if (event.key === 'Enter') event.preventDefault()">
                             <ul id="suggestions3" class="suggestions"></ul>
@@ -244,7 +248,6 @@
             <h3>Notes</h3>
             <ul>
                 <li>Not affiliated with the Football Cliches podcast. Created by a fan.</li>
-                <li>Data was scraped from Flashscore. If you notice any issues please get in touch.</li>
             </ul>
         </div>
 
