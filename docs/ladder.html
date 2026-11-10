@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>SPFL Happy Hunting Grounds - Ladder</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/ladder.css">
+    <script defer src="js/ladder.js"></script>
+</head>
+
+<body>
+    <header>
+        <h1>SPFL Happy Hunting Grounds</h1>
+    </header>
+
+    <nav class="mode-nav">
+        <a href="index.html">Classic</a>
+    </nav>
+
+    <main>
+
+        <!-- Rung 1 -->
+        <div class="rung-header" id="rungHeader1">
+            <span>Rung 1</span>
+            <span id="rungLevel1">Level 1</span>
+        </div>
+
+
+        <div class="ladder-card hidden" id="guessSec1">
+            <form id="guessSelection1">
+                <div class="card-top-row">
+                    <p id="level1" class="challenge-text"></p>
+                    <span id="levelLabel1" class="level-label"></span>
+                </div>
+                <label for="player1">Player</label>
+                <div class="autocomplete-wrapper">
+                    <input type="text" id="player1" autocomplete="off" oninput="playerEntry(event)" onkeydown="if (event.key === 'Enter') event.preventDefault()" required>
+                    <ul id="suggestions1" class="suggestions"></ul>
+                </div>
+                <div class="card-bottom-row">
+                    <div class="season-wrapper">
+                        <label for="season1">Season</label>
+                        <select id="season1" name="season">
+                            <option value="2025/26">2025/26</option><option value="2024/25">2024/25</option><option value="2023/24">2023/24</option><option value="2022/23">2022/23</option><option value="2021/22">2021/22</option><option value="2020/21">2020/21</option><option value="2019/20">2019/20</option><option value="2018/19">2018/19</option><option value="2017/18">2017/18</option><option value="2016/17">2016/17</option><option value="2015/16">2015/16</option><option value="2014/15">2014/15</option><option value="2013/14">2013/14</option><option value="2012/13">2012/13</option><option value="2011/12">2011/12</option><option value="2010/11">2010/11</option><option value="2009/10">2009/10</option><option value="2008/09">2008/09</option><option value="2007/08">2007/08</option><option value="2006/07">2006/07</option><option value="2005/06">2005/06</option><option value="2004/05">2004/05</option>
+                        </select>
+                    </div>
+                    <input type="submit" value="Submit" class="button" id="answerSubmit1">
+                </div>
+            </form>
+        </div>
+        <div class="result-card hidden" id="resultCard1">
+            <div class="result-top-row">
+                <p id="resultChallenge1" class="result-challenge"></p>
+                <span id="resultLevelLabel1" class="level-label"></span>
+            </div>
+            <div class="result-bottom-row">
+                <p id="result1" class="result-text"></p>
+                <span id="resultPoints1" class="result-points"></span>
+            </div>
+        </div>
+
+        <!-- Rung 2 -->
+        <div class="rung-header locked" id="rungHeader2">
+            <span>Rung 2</span>
+            <span id="rungLevel2">Level 2</span>
+        </div>
+        <div class="ladder-card hidden" id="guessSec2">
+            <form id="guessSelection2">
+                <div class="card-top-row">
+                    <p id="level2" class="challenge-text"></p>
+                    <span id="levelLabel2" class="level-label"></span>
+                </div>
+                <label for="player2">Player</label>
+                <div class="autocomplete-wrapper">
+                    <input type="text" id="player2" autocomplete="off" oninput="playerEntry(event)" onkeydown="if (event.key === 'Enter') event.preventDefault()" required>
+                    <ul id="suggestions2" class="suggestions"></ul>
+                </div>
+                <div class="card-bottom-row">
+                    <div class="season-wrapper">
+                        <label for="season2">Season</label>
+                        <select id="season2" name="season">
+                            <option value="2025/26">2025/26</option><option value="2024/25">2024/25</option><option value="2023/24">2023/24</option><option value="2022/23">2022/23</option><option value="2021/22">2021/22</option><option value="2020/21">2020/21</option><option value="2019/20">2019/20</option><option value="2018/19">2018/19</option><option value="2017/18">2017/18</option><option value="2016/17">2016/17</option><option value="2015/16">2015/16</option><option value="2014/15">2014/15</option><option value="2013/14">2013/14</option><option value="2012/13">2012/13</option><option value="2011/12">2011/12</option><option value="2010/11">2010/11</option><option value="2009/10">2009/10</option><option value="2008/09">2008/09</option><option value="2007/08">2007/08</option><option value="2006/07">2006/07</option><option value="2005/06">2005/06</option><option value="2004/05">2004/05</option>
+                        </select>
+                    </div>
+                    <input type="submit" value="Submit" class="button" id="answerSubmit2">
+                </div>
+            </form>
+        </div>
+        <div class="result-card hidden" id="resultCard2">
+            <div class="result-top-row">
+                <p id="resultChallenge2" class="result-challenge"></p>
+                <span id="resultLevelLabel2" class="level-label"></span>
+            </div>
+            <div class="result-bottom-row">
+                <p id="result2" class="result-text"></p>
+                <span id="resultPoints2" class="result-points"></span>
+            </div>
+        </div>
+
+        <!-- Rung 3 -->
+        <div class="rung-header locked" id="rungHeader3">
+            <span>Rung 3</span>
+            <span id="rungLevel3">Level 3</span>
+        </div>
+        <div class="ladder-card hidden" id="guessSec3">
+            <form id="guessSelection3">
+                <div class="card-top-row">
+                    <p id="level3" class="challenge-text"></p>
+                    <span id="levelLabel3" class="level-label"></span>
+                </div>
+                <label for="player3">Player</label>
+                <div class="autocomplete-wrapper">
+                    <input type="text" id="player3" autocomplete="off" oninput="playerEntry(event)" onkeydown="if (event.key === 'Enter') event.preventDefault()" required>
+                    <ul id="suggestions3" class="suggestions"></ul>
+                </div>
+                <div class="card-bottom-row">
+                    <div class="season-wrapper">
+                        <label for="season3">Season</label>
+                        <select id="season3" name="season">
+                            <option value="2025/26">2025/26</option><option value="2024/25">2024/25</option><option value="2023/24">2023/24</option><option value="2022/23">2022/23</option><option value="2021/22">2021/22</option><option value="2020/21">2020/21</option><option value="2019/20">2019/20</option><option value="2018/19">2018/19</option><option value="2017/18">2017/18</option><option value="2016/17">2016/17</option><option value="2015/16">2015/16</option><option value="2014/15">2014/15</option><option value="2013/14">2013/14</option><option value="2012/13">2012/13</option><option value="2011/12">2011/12</option><option value="2010/11">2010/11</option><option value="2009/10">2009/10</option><option value="2008/09">2008/09</option><option value="2007/08">2007/08</option><option value="2006/07">2006/07</option><option value="2005/06">2005/06</option><option value="2004/05">2004/05</option>
+                        </select>
+                    </div>
+                    <input type="submit" value="Submit" class="button" id="answerSubmit3">
+                </div>
+            </form>
+        </div>
+        <div class="result-card hidden" id="resultCard3">
+            <div class="result-top-row">
+                <p id="resultChallenge3" class="result-challenge"></p>
+                <span id="resultLevelLabel3" class="level-label"></span>
+            </div>
+            <div class="result-bottom-row">
+                <p id="result3" class="result-text"></p>
+                <span id="resultPoints3" class="result-points"></span>
+            </div>
+        </div>
+
+        <!-- Rung 4 -->
+        <div class="rung-header locked" id="rungHeader4">
+            <span>Rung 4</span>
+            <span id="rungLevel4">Level 4</span>
+        </div>
+        <div class="ladder-card hidden" id="guessSec4">
+            <form id="guessSelection4">
+                <div class="card-top-row">
+                    <p id="level4" class="challenge-text"></p>
+                    <span id="levelLabel4" class="level-label"></span>
+                </div>
+                <label for="player4">Player</label>
+                <div class="autocomplete-wrapper">
+                    <input type="text" id="player4" autocomplete="off" oninput="playerEntry(event)" onkeydown="if (event.key === 'Enter') event.preventDefault()" required>
+                    <ul id="suggestions4" class="suggestions"></ul>
+                </div>
+                <div class="card-bottom-row">
+                    <div class="season-wrapper">
+                        <label for="season4">Season</label>
+                        <select id="season4" name="season">
+                            <option value="2025/26">2025/26</option><option value="2024/25">2024/25</option><option value="2023/24">2023/24</option><option value="2022/23">2022/23</option><option value="2021/22">2021/22</option><option value="2020/21">2020/21</option><option value="2019/20">2019/20</option><option value="2018/19">2018/19</option><option value="2017/18">2017/18</option><option value="2016/17">2016/17</option><option value="2015/16">2015/16</option><option value="2014/15">2014/15</option><option value="2013/14">2013/14</option><option value="2012/13">2012/13</option><option value="2011/12">2011/12</option><option value="2010/11">2010/11</option><option value="2009/10">2009/10</option><option value="2008/09">2008/09</option><option value="2007/08">2007/08</option><option value="2006/07">2006/07</option><option value="2005/06">2005/06</option><option value="2004/05">2004/05</option>
+                        </select>
+                    </div>
+                    <input type="submit" value="Submit" class="button" id="answerSubmit4">
+                </div>
+            </form>
+        </div>
+        <div class="result-card hidden" id="resultCard4">
+            <div class="result-top-row">
+                <p id="resultChallenge4" class="result-challenge"></p>
+                <span id="resultLevelLabel4" class="level-label"></span>
+            </div>
+            <div class="result-bottom-row">
+                <p id="result4" class="result-text"></p>
+                <span id="resultPoints4" class="result-points"></span>
+            </div>
+        </div>
+
+        <!-- Rung 5 -->
+        <div class="rung-header locked" id="rungHeader5">
+            <span>Rung 5</span>
+            <span id="rungLevel5">Level 5</span>
+        </div>
+        <div class="ladder-card hidden" id="guessSec5">
+            <form id="guessSelection5">
+                <div class="card-top-row">
+                    <p id="level5" class="challenge-text"></p>
+                    <span id="levelLabel5" class="level-label"></span>
+                </div>
+                <label for="player5">Player</label>
+                <div class="autocomplete-wrapper">
+                    <input type="text" id="player5" autocomplete="off" oninput="playerEntry(event)" onkeydown="if (event.key === 'Enter') event.preventDefault()" required>
+                    <ul id="suggestions5" class="suggestions"></ul>
+                </div>
+                <div class="card-bottom-row">
+                    <div class="season-wrapper">
+                        <label for="season5">Season</label>
+                        <select id="season5" name="season">
+                            <option value="2025/26">2025/26</option><option value="2024/25">2024/25</option><option value="2023/24">2023/24</option><option value="2022/23">2022/23</option><option value="2021/22">2021/22</option><option value="2020/21">2020/21</option><option value="2019/20">2019/20</option><option value="2018/19">2018/19</option><option value="2017/18">2017/18</option><option value="2016/17">2016/17</option><option value="2015/16">2015/16</option><option value="2014/15">2014/15</option><option value="2013/14">2013/14</option><option value="2012/13">2012/13</option><option value="2011/12">2011/12</option><option value="2010/11">2010/11</option><option value="2009/10">2009/10</option><option value="2008/09">2008/09</option><option value="2007/08">2007/08</option><option value="2006/07">2006/07</option><option value="2005/06">2005/06</option><option value="2004/05">2004/05</option>
+                        </select>
+                    </div>
+                    <input type="submit" value="Submit" class="button" id="answerSubmit5">
+                </div>
+            </form>
+        </div>
+        <div class="result-card hidden" id="resultCard5">
+            <div class="result-top-row">
+                <p id="resultChallenge5" class="result-challenge"></p>
+                <span id="resultLevelLabel5" class="level-label"></span>
+            </div>
+            <div class="result-bottom-row">
+                <p id="result5" class="result-text"></p>
+                <span id="resultPoints5" class="result-points"></span>
+            </div>
+        </div>
+
+        <!-- Rung 6 -->
+        <div class="rung-header locked" id="rungHeader6">
+            <span>Rung 6</span>
+            <span id="rungLevel6">Level 6</span>
+        </div>
+        <div class="ladder-card hidden" id="guessSec6">
+            <form id="guessSelection6">
+                <div class="card-top-row">
+                    <p id="level6" class="challenge-text"></p>
+                    <span id="levelLabel6" class="level-label"></span>
+                </div>
+                <label for="player6">Player</label>
+                <div class="autocomplete-wrapper">
+                    <input type="text" id="player6" autocomplete="off" oninput="playerEntry(event)" onkeydown="if (event.key === 'Enter') event.preventDefault()" required>
+                    <ul id="suggestions6" class="suggestions"></ul>
+                </div>
+                <div class="card-bottom-row">
+                    <div class="season-wrapper">
+                        <label for="season6">Season</label>
+                        <select id="season6" name="season">
+                            <option value="2025/26">2025/26</option><option value="2024/25">2024/25</option><option value="2023/24">2023/24</option><option value="2022/23">2022/23</option><option value="2021/22">2021/22</option><option value="2020/21">2020/21</option><option value="2019/20">2019/20</option><option value="2018/19">2018/19</option><option value="2017/18">2017/18</option><option value="2016/17">2016/17</option><option value="2015/16">2015/16</option><option value="2014/15">2014/15</option><option value="2013/14">2013/14</option><option value="2012/13">2012/13</option><option value="2011/12">2011/12</option><option value="2010/11">2010/11</option><option value="2009/10">2009/10</option><option value="2008/09">2008/09</option><option value="2007/08">2007/08</option><option value="2006/07">2006/07</option><option value="2005/06">2005/06</option><option value="2004/05">2004/05</option>
+                        </select>
+                    </div>
+                    <input type="submit" value="Submit" class="button" id="answerSubmit6">
+                </div>
+            </form>
+        </div>
+        <div class="result-card hidden" id="resultCard6">
+            <div class="result-top-row">
+                <p id="resultChallenge6" class="result-challenge"></p>
+                <span id="resultLevelLabel6" class="level-label"></span>
+            </div>
+            <div class="result-bottom-row">
+                <p id="result6" class="result-text"></p>
+                <span id="resultPoints6" class="result-points"></span>
+            </div>
+        </div>
+
+        <!-- Rung 7 -->
+        <div class="rung-header locked" id="rungHeader7">
+            <span>Rung 7</span>
+            <span id="rungLevel7">Level 7</span>
+        </div>
+        <div class="ladder-card hidden" id="guessSec7">
+            <form id="guessSelection7">
+                <div class="card-top-row">
+                    <p id="level7" class="challenge-text"></p>
+                    <span id="levelLabel7" class="level-label"></span>
+                </div>
+                <label for="player7">Player</label>
+                <div class="autocomplete-wrapper">
+                    <input type="text" id="player7" autocomplete="off" oninput="playerEntry(event)" onkeydown="if (event.key === 'Enter') event.preventDefault()" required>
+                    <ul id="suggestions7" class="suggestions"></ul>
+                </div>
+                <div class="card-bottom-row">
+                    <div class="season-wrapper">
+                        <label for="season7">Season</label>
+                        <select id="season7" name="season">
+                            <option value="2025/26">2025/26</option><option value="2024/25">2024/25</option><option value="2023/24">2023/24</option><option value="2022/23">2022/23</option><option value="2021/22">2021/22</option><option value="2020/21">2020/21</option><option value="2019/20">2019/20</option><option value="2018/19">2018/19</option><option value="2017/18">2017/18</option><option value="2016/17">2016/17</option><option value="2015/16">2015/16</option><option value="2014/15">2014/15</option><option value="2013/14">2013/14</option><option value="2012/13">2012/13</option><option value="2011/12">2011/12</option><option value="2010/11">2010/11</option><option value="2009/10">2009/10</option><option value="2008/09">2008/09</option><option value="2007/08">2007/08</option><option value="2006/07">2006/07</option><option value="2005/06">2005/06</option><option value="2004/05">2004/05</option>
+                        </select>
+                    </div>
+                    <input type="submit" value="Submit" class="button" id="answerSubmit7">
+                </div>
+            </form>
+        </div>
+        <div class="result-card hidden" id="resultCard7">
+            <div class="result-top-row">
+                <p id="resultChallenge7" class="result-challenge"></p>
+                <span id="resultLevelLabel7" class="level-label"></span>
+            </div>
+            <div class="result-bottom-row">
+                <p id="result7" class="result-text"></p>
+                <span id="resultPoints7" class="result-points"></span>
+            </div>
+        </div>
+
+        <!-- Rung 8 -->
+        <div class="rung-header locked" id="rungHeader8">
+            <span>Rung 8</span>
+            <span id="rungLevel8">Level 8</span>
+        </div>
+        <div class="ladder-card hidden" id="guessSec8">
+            <form id="guessSelection8">
+                <div class="card-top-row">
+                    <p id="level8" class="challenge-text"></p>
+                    <span id="levelLabel8" class="level-label"></span>
+                </div>
+                <label for="player8">Player</label>
+                <div class="autocomplete-wrapper">
+                    <input type="text" id="player8" autocomplete="off" oninput="playerEntry(event)" onkeydown="if (event.key === 'Enter') event.preventDefault()" required>
+                    <ul id="suggestions8" class="suggestions"></ul>
+                </div>
+                <div class="card-bottom-row">
+                    <div class="season-wrapper">
+                        <label for="season8">Season</label>
+                        <select id="season8" name="season">
+                            <option value="2025/26">2025/26</option><option value="2024/25">2024/25</option><option value="2023/24">2023/24</option><option value="2022/23">2022/23</option><option value="2021/22">2021/22</option><option value="2020/21">2020/21</option><option value="2019/20">2019/20</option><option value="2018/19">2018/19</option><option value="2017/18">2017/18</option><option value="2016/17">2016/17</option><option value="2015/16">2015/16</option><option value="2014/15">2014/15</option><option value="2013/14">2013/14</option><option value="2012/13">2012/13</option><option value="2011/12">2011/12</option><option value="2010/11">2010/11</option><option value="2009/10">2009/10</option><option value="2008/09">2008/09</option><option value="2007/08">2007/08</option><option value="2006/07">2006/07</option><option value="2005/06">2005/06</option><option value="2004/05">2004/05</option>
+                        </select>
+                    </div>
+                    <input type="submit" value="Submit" class="button" id="answerSubmit8">
+                </div>
+            </form>
+        </div>
+        <div class="result-card hidden" id="resultCard8">
+           <div class="result-top-row">
+                <p id="resultChallenge8" class="result-challenge"></p>
+                <span id="resultLevelLabel8" class="level-label"></span>
+            </div>
+            <div class="result-bottom-row">
+                <p id="result8" class="result-text"></p>
+                <span id="resultPoints8" class="result-points"></span>
+            </div>
+        </div>
+
+        <!-- Rung 9 -->
+        <div class="rung-header locked" id="rungHeader9">
+            <span>Rung 9</span>
+            <span id="rungLevel9">Level 9</span>
+        </div>
+        <div class="ladder-card hidden" id="guessSec9">
+            <form id="guessSelection9">
+                <div class="card-top-row">
+                    <p id="level9" class="challenge-text"></p>
+                    <span id="levelLabel9" class="level-label"></span>
+                </div>
+                <label for="player9">Player</label>
+                <div class="autocomplete-wrapper">
+                    <input type="text" id="player9" autocomplete="off" oninput="playerEntry(event)" onkeydown="if (event.key === 'Enter') event.preventDefault()" required>
+                    <ul id="suggestions9" class="suggestions"></ul>
+                </div>
+                <div class="card-bottom-row">
+                    <div class="season-wrapper">
+                        <label for="season9">Season</label>
+                        <select id="season9" name="season">
+                            <option value="2025/26">2025/26</option><option value="2024/25">2024/25</option><option value="2023/24">2023/24</option><option value="2022/23">2022/23</option><option value="2021/22">2021/22</option><option value="2020/21">2020/21</option><option value="2019/20">2019/20</option><option value="2018/19">2018/19</option><option value="2017/18">2017/18</option><option value="2016/17">2016/17</option><option value="2015/16">2015/16</option><option value="2014/15">2014/15</option><option value="2013/14">2013/14</option><option value="2012/13">2012/13</option><option value="2011/12">2011/12</option><option value="2010/11">2010/11</option><option value="2009/10">2009/10</option><option value="2008/09">2008/09</option><option value="2007/08">2007/08</option><option value="2006/07">2006/07</option><option value="2005/06">2005/06</option><option value="2004/05">2004/05</option>
+                        </select>
+                    </div>
+                    <input type="submit" value="Submit" class="button" id="answerSubmit9">
+                </div>
+            </form>
+        </div>
+        <div class="result-card hidden" id="resultCard9">
+            <div class="result-top-row">
+                <p id="resultChallenge9" class="result-challenge"></p>
+                <span id="resultLevelLabel9" class="level-label"></span>
+            </div>
+            <div class="result-bottom-row">
+                <p id="result9" class="result-text"></p>
+                <span id="resultPoints9" class="result-points"></span>
+            </div>
+        </div>
+
+        <!-- Rung 10 -->
+        <div class="rung-header locked" id="rungHeader10">
+            <span>Rung 10</span>
+            <span id="rungLevel10">Level 10</span>
+        </div>
+        <div class="ladder-card hidden" id="guessSec10">
+            <form id="guessSelection10">
+                <div class="card-top-row">
+                    <p id="level10" class="challenge-text"></p>
+                    <span id="levelLabel10" class="level-label"></span>
+                </div>
+                <label for="player10">Player</label>
+                <div class="autocomplete-wrapper">
+                    <input type="text" id="player10" autocomplete="off" oninput="playerEntry(event)" onkeydown="if (event.key === 'Enter') event.preventDefault()" required>
+                    <ul id="suggestions10" class="suggestions"></ul>
+                </div>
+                <div class="card-bottom-row">
+                    <div class="season-wrapper">
+                        <label for="season10">Season</label>
+                        <select id="season10" name="season">
+                            <option value="2025/26">2025/26</option><option value="2024/25">2024/25</option><option value="2023/24">2023/24</option><option value="2022/23">2022/23</option><option value="2021/22">2021/22</option><option value="2020/21">2020/21</option><option value="2019/20">2019/20</option><option value="2018/19">2018/19</option><option value="2017/18">2017/18</option><option value="2016/17">2016/17</option><option value="2015/16">2015/16</option><option value="2014/15">2014/15</option><option value="2013/14">2013/14</option><option value="2012/13">2012/13</option><option value="2011/12">2011/12</option><option value="2010/11">2010/11</option><option value="2009/10">2009/10</option><option value="2008/09">2008/09</option><option value="2007/08">2007/08</option><option value="2006/07">2006/07</option><option value="2005/06">2005/06</option><option value="2004/05">2004/05</option>
+                        </select>
+                    </div>
+                    <input type="submit" value="Submit" class="button" id="answerSubmit10">
+                </div>
+            </form>
+        </div>
+        <div class="result-card hidden" id="resultCard10">
+            <div class="result-top-row">
+                <p id="resultChallenge10" class="result-challenge"></p>
+                <span id="resultLevelLabel10" class="level-label"></span>
+            </div>
+            <div class="result-bottom-row">
+                <p id="result10" class="result-text"></p>
+                <span id="resultPoints10" class="result-points"></span>
+            </div>
+        </div>
+
+        <!-- Final score -->
+        <div id="finalScore" class="hidden">
+            <p id="completedMsg" class="hidden">Congrats! You completed the ladder!</p>
+            <p id="totalScoreDisplay"></p>
+        </div>
+
+    </main>
+</body>
+</html>
