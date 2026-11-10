@@ -64,14 +64,33 @@ async function fetchGuess(playerSelection, seasonSelection) {
         result.innerHTML = playerSelection + " did not score for " + obj.team + " at " + obj.ground + ".";
         points.innerHTML = "+0 points";
         resultLevelLabel.innerHTML = "Level " + currentLevel;
-        endLadder();
+        for (let i = currentLevel; i <= 10; i++) {
+            console.log("hiding " + i);
+            document.getElementById("rungHeader" + i).classList.add('hidden');
+        
+        }
+        document.getElementById("finalScore").classList.remove('hidden');
+        document.getElementById("totalScoreDisplay").innerHTML = "Unlucky you failed the ladder at Level " + currentLevel;
+        //endLadder();
 
     } else if (data.correct === 1) {
+        /*
         // right player, wrong season
         result.innerHTML = playerSelection + " has scored there but not in the " + seasonSelection + " season.";
         points.innerHTML = "+0 points";
         resultLevelLabel.innerHTML = "Level " + currentLevel;
         endLadder();
+        */
+
+        result.innerHTML = playerSelection + " has scored there but not in the " + seasonSelection + " season.";
+        resultLevelLabel.innerHTML = "Level " + currentLevel;
+        for (let i = currentLevel; i <= 10; i++) {
+            console.log("hiding " + i);
+            document.getElementById("rungHeader" + i).classList.add('hidden');
+        
+        }
+        document.getElementById("finalScore").classList.remove('hidden');
+        document.getElementById("totalScoreDisplay").innerHTML = "Unlucky you failed the ladder at Level " + currentLevel;
 
     } else if (data.correct === 2) {
         // correct
@@ -82,12 +101,13 @@ async function fetchGuess(playerSelection, seasonSelection) {
 
         document.getElementById("totalScoreDisplay").innerHTML = "Total score: " + totalScore;
 
-        if (currentLevel < 2) {
+        if (currentLevel < 10) {
             currentLevel++;
             fetchLevel(currentLevel);
         } else {
-            document.getElementById("completedMsg").classList.remove('hidden');
-            endLadder();
+            document.getElementById("finalScore").classList.remove('hidden');
+            document.getElementById("totalScoreDisplay").innerHTML = "Congrats! You completed the ladder!";
+            //endLadder();
         }
     }
 }
